@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 '''
-This module provides utility functions for pagination, including calculating the range of indices for items on a specific page.
+This module provides utility functions for pagination, including calculating
+the range of indices for items on a specific page.
 '''
 
 
