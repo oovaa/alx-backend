@@ -1,0 +1,32 @@
+class indexed_dec():
+    d = {}
+    id = 0
+    indexed_d = {}
+
+    def add(self, k, v):
+        self.d[k] = v
+        self.indexed_d[self.id] = k
+        self.id += 1
+
+    def remove(self):
+        first_key = self.indexed_d[min(self.indexed_d.keys())]
+        print('gonna remove ', first_key)
+        self.d.pop(first_key)
+        self.indexed_d.pop(min(self.indexed_d.keys()))
+
+    def pd(self):
+        print(self.d)
+
+
+test = indexed_dec()
+
+test.add('name', 'omar')
+test.add('age', 21)
+test.add('pre', 'E')
+
+test.pd()
+test.remove()
+test.remove()
+test.add('key', 'val')
+test.remove()
+test.pd()
