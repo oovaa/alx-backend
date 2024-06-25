@@ -41,14 +41,17 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """
-        Retrieves a subset of data from the dataset based on the given index and page size.
+        Retrieves a subset of data from the dataset based on the given index
+        and page size.
 
         Args:
             index (int): The starting index of the subset. Defaults to None.
-            page_size (int): The number of items to include in the subset. Defaults to 10.
+            page_size (int): The number of items to include in the subset.
+            Defaults to 10.
 
         Returns:
-            dict: A dictionary containing the index, next_index, page_size, and data of the subset.
+            dict: A dictionary containing the index, next_index, page_size,
+            and data of the subset.
         """
         assert (type(index) is int and index > 0)
         data = self.dataset()[index: index + page_size]
