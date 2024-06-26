@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 '''
-task 0
+This module defines the BasicCache class which inherits
+ from BaseCaching.
+The BasicCache class implements a basic caching system
+that stores key-value pairs.
 '''
 
 from base_caching import BaseCaching
