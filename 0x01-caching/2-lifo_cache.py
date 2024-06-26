@@ -13,48 +13,48 @@ from base_caching import BaseCaching
 
 class LIFOCache(BaseCaching):
 
-    class LIFOCache:
+    """
+    LIFOCache class represents a Last-In-First-Out (LIFO) cache.
+
+    Attributes:
+        id (int): The ID of the cache.
+        track (dict): A dictionary to track the cache items.
+    """
+
+    def __init__(self):
         """
-        LIFOCache class represents a Last-In-First-Out (LIFO) cache.
+        Initializes a new instance of the LIFOCache class.
 
-        Attributes:
-            id (int): The ID of the cache.
-            track (dict): A dictionary to track the cache items.
+        The __init__ method is called when a new LIFOCache object is
+        created.
+        It initializes the cache ID and the track dictionary.
         """
-
-        def __init__(self):
-            """
-            Initializes a new instance of the LIFOCache class.
-
-            The __init__ method is called when a new LIFOCache object is created.
-            It initializes the cache ID and the track dictionary.
-            """
-            super().__init__()
-            self.id = 0
-            self.track = {}
+        super().__init__()
+        self.id = 0
+        self.track = {}
 
     def put(self, key, item):
-            """
-            Adds a key-value pair to the cache.
+        """
+        Adds a key-value pair to the cache.
 
-            Args:
-                key: The key to be added.
-                item: The value associated with the key.
+        Args:
+            key: The key to be added.
+            item: The value associated with the key.
 
-            Returns:
-                None
-            """
-            if key is not None and item is not None:
-                if len(self.cache_data
-                       ) == self.MAX_ITEMS and key not in self.cache_data:
-                    to_pop_key = self.track[max(self.track.keys())]
-                    poped = self.cache_data.pop(to_pop_key)
-                    print('DISCARD:', to_pop_key)
-                    self.track.pop(max(self.track.keys()))
+        Returns:
+            None
+        """
+        if key is not None and item is not None:
+            if len(self.cache_data
+                   ) == self.MAX_ITEMS and key not in self.cache_data:
+                to_pop_key = self.track[max(self.track.keys())]
+                poped = self.cache_data.pop(to_pop_key)
+                print('DISCARD:', to_pop_key)
+                self.track.pop(max(self.track.keys()))
 
-                self.track[self.id] = key
-                self.id += 1
-                self.cache_data[key] = item
+            self.track[self.id] = key
+            self.id += 1
+            self.cache_data[key] = item
 
     def get(self, key):
         """
