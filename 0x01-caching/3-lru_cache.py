@@ -46,7 +46,8 @@ class LRUCache(BaseCaching):
         """
         Handle the case when the cache is full.
 
-        Removes the least recently used item from the cache and adds the new key and item.
+        Removes the least recently used item from the cache and adds the new
+        key and item.
 
         Args:
             key: The key to be added to the cache.
@@ -83,7 +84,8 @@ class LRUCache(BaseCaching):
 
         If the key already exists in the cache, update its value.
         If the cache is not full, add the key-value pair to the cache.
-        If the cache is full, remove the least recently used item and add the new key-value pair.
+        If the cache is full, remove the least recently used item and add the
+        new key-value pair.
 
         Args:
             key: The key to be added to the cache.
@@ -106,14 +108,16 @@ class LRUCache(BaseCaching):
         """
         Retrieve the value associated with the given key from the cache.
 
-        If the key exists in the cache, move it to the end of the track list and return its value.
+        If the key exists in the cache, move it to the end of the track list
+        and return its value.
         If the key does not exist in the cache, return None.
 
         Args:
             key: The key to retrieve the value for.
 
         Returns:
-            The value associated with the key, or None if the key does not exist in the cache.
+            The value associated with the key, or None if the key does not
+            exist in the cache.
         """
         if key in self.cache_data and key is not None:
             if key in self.track:
