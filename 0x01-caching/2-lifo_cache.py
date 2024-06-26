@@ -30,6 +30,7 @@ class LIFOCache(BaseCaching):
             key: The key of the item to be retrieved.
 
         Returns:
-            The item associated with the given key, or None if the key is not found in the cache.
+            The item associated with the given key, or None if the key is not
+            found in the cache.
         """
         return self.cache_data.get(key, None)

@@ -10,7 +10,8 @@ class FIFOCache(BaseCaching):
     """
     FIFOCache class represents a First-In-First-Out (FIFO) caching mechanism.
 
-    It inherits from the BaseCaching class and implements the put and get methods.
+    It inherits from the BaseCaching class and implements the put and get
+    methods.
     """
 
     def __init__(self):
@@ -23,14 +24,16 @@ class FIFOCache(BaseCaching):
         """
         Adds an item to the cache.
 
-        If the cache is full, it removes the oldest item (the first item that was added).
+        If the cache is full, it removes the oldest item (the first item that
+        was added).
 
         Args:
             key: The key of the item to be added.
             item: The item to be added to the cache.
         """
         if key is not None and item is not None:
-            if len(self.cache_data) >= self.MAX_ITEMS and key not in self.cache_data:
+            if len(self.cache_data
+                   ) >= self.MAX_ITEMS and key not in self.cache_data:
                 first_key = next(iter(self.cache_data))
                 print('DISCARD:', first_key)
                 self.cache_data.pop(first_key)
@@ -44,6 +47,7 @@ class FIFOCache(BaseCaching):
             key: The key of the item to be retrieved.
 
         Returns:
-            The item associated with the given key, or None if the key is not found in the cache.
+            The item associated with the given key, or None if the key is not
+            found in the cache.
         """
         return self.cache_data.get(key, None)
